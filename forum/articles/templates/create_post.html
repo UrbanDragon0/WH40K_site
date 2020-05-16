@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Django Public Blog - создать статью</title>
+        {% load static %}
+          <link rel="stylesheet" type="text/css" href="{% static 'css/archive_style.css' %}">
+
+      </head>
+
+      <body>
+
+        <style>body {background-image: url({% static 'imgs/fon2.jpg' %});
+           background-size: 100%;}</style>
+
+        <h2 class="exit"><a href="/archive/">МАНУСКРИПТЫ</a></h2>
+        <h2><a class="fciA navItem" href="/"><span class="fciSpan">НАЗАД НА ГЛАВНУЮ</span></a></h2>
+          <div class="content">
+
+              <h1 class='hed'> СОЗДАНИЕ МАНУСКРИПТА</h1>
+              <form method="POST">{% csrf_token %}
+
+<div>
+                  <input class="exit" type="text" name="title" placeholder="Название статьи" value="{{ form.title }}">
+</div>
+
+
+                  <textarea class="article" name="text" placeholder="Текст статьи" cols='60' rows='35'>{{ form.text }}</textarea>
+
+                  <input type="submit" value="Сохранить">
+
+
+
+              </form>
+
+              {{ form.errors }}
+          </div>
+      </body>
+  </html>

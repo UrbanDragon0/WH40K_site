@@ -1,0 +1,161 @@
+{% block title %}{% endblock %}
+{% load static %}
+
+{% block content %}
+
+<style>
+
+body {background-image: url({% static 'imgs/fone3.jpg' %});
+   background-size: 100%;}
+
+.n{
+  font-family: Impact;
+  font-size: 19px;
+  background-color: rgba(205, 214, 219, 0.3);
+  text-align: center;
+  float:left;
+  width:100%;
+  padding:0 0 33px;
+}
+
+h2{
+  color: #8e0000;
+  font-size: 50px;
+  font-family: Impact;
+
+  float:left;
+  width:100%;
+  padding:0 0 33px;
+}
+  a{
+    font-family:Impact;
+    font-size: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    width:150px;
+    color: white;
+    position: relative;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+    background-color: black;
+  }
+  a:hover {
+    color: #8e0000;
+    background:rgba(0,0,0,0.1);
+  }
+  a:after {
+    left: -20px;
+    -webkit-transition-property: left, opacity, top;
+    -moz-transition-property: left, opacity, top;
+    -o-transition-property: left, opacity, top;
+    transition-property: left, opacity, top;
+    -webkit-transition-duration: .2s, .2s, .2s;
+    -moz-transition-duration: .2s, .2s, .2s;
+    -o-transition-duration: .2s, .2s, .2s;
+    transition-duration: .2s, .2s, .2s;
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    position: absolute;
+    border-left: 5px solid #444444;
+    border-top: 5px solid #444444;
+    top: -22px;
+    opacity: 0;
+  }
+  a:hover:after {
+    left: -10px;
+    top: -12px;
+    opacity: 1;
+  }
+  a:before {
+    right: -20px;
+    -webkit-transition-property: right, opacity, top;
+    -moz-transition-property: right, opacity, top;
+    -o-transition-property: right, opacity, top;
+    transition-property: right, opacity, top;
+    -webkit-transition-duration: .2s, .2s, .2s;
+    -moz-transition-duration: .2s, .2s, .2s;
+    -o-transition-duration: .2s, .2s, .2s;
+    transition-duration: .2s, .2s, .2s;
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    position: absolute;
+    border-right: 5px solid #444444;
+    border-top: 5px solid #444444;
+    top: -22px;
+    opacity: 0;
+  }
+  a.fciA:hover:before {
+    right: -10px;
+    top: -12px;
+    opacity: 1;
+  }
+  .fciSpan:after {
+    left: -20px;
+    -webkit-transition-property: left, opacity, bottom;
+    -moz-transition-property: left, opacity, bottom;
+    -o-transition-property: left, opacity, bottom;
+    transition-property: left, opacity, bottom;
+    -webkit-transition-duration: .2s, .2s, .2s;
+    -moz-transition-duration: .2s, .2s, .2s;
+    -o-transition-duration: .2s, .2s, .2s;
+    transition-duration: .2s, .2s, .2s;
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    position: absolute;
+    border-left: 5px solid #444444;
+    border-bottom: 5px solid #444444;
+    bottom: -24px;
+    opacity: 0;
+  }
+  .fciSpan:hover:after {
+    left: -10px;
+    bottom: -14px;
+    opacity: 1;
+  }
+  .fciSpan:before {
+    right: -20px;
+    -webkit-transition-property: right, opacity, bottom;
+    -moz-transition-property: right, opacity, bottom;
+    -o-transition-property: right, opacity, bottom;
+    transition-property: right, opacity, bottom;
+    -webkit-transition-duration: .2s, .2s, .2s;
+    -moz-transition-duration: .2s, .2s, .2s;
+    -o-transition-duration: .2s, .2s, .2s;
+    transition-duration: .2s, .2s, .2s;
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    position: absolute;
+    border-right: 5px solid #444444;
+    border-bottom: 5px solid #444444;
+    bottom: -24px;
+    opacity: 0;
+  }
+  .fciSpan:hover:before {
+    right: -10px;
+    bottom: -14px;
+    opacity: 1;
+  }
+
+
+
+}
+
+</style>
+<h2><a  href="/"><span class="fciSpan">Назад</span></a></h2>
+  <h2>ВСТУПЛЕНИЕ В ЛЕГИОН</h2>
+  <form class='n'  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Подписать своей кровью и присоединиться к братсву</button>
+  </form>
+{% endblock %}

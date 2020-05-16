@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <title>WARHAMMER40000</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/archive_style.css' %}">
+</head>
+
+<body>
+
+
+  <div>
+    {% load static %}
+    <style>body {background-image: url({% static 'imgs/fon2.jpg' %});
+       background-size: 100%;
+       background-color: black}</style>
+
+
+    <table>
+      <tr>
+        <td><img src="{% static 'imgs/logo.png' %}" height="432" width="768"></td>
+
+        <td><h2><a class="fciA navItem" href="/"><span class="fciSpan">Назад</span></a></h2></td>
+        <td><h2><a class="fciA navItem" href="/article_new/"><span class="fciSpan">Написать собственный манускрипт</span></a></h2></td>
+      </tr>
+    </table>
+
+
+  </div>
+
+  <div class='hed'>
+      {% for post in posts %}
+          <div>
+              <h2>
+                  <a href="/article/{{ post.id }}">{{ post.title }}</a>
+              </h2>
+              <div>
+                  <div>{{ post.author.username }}</div>
+                  <div>{{ post.created_date }}</div>
+              </div>
+              <p>{{ post.get_excerpt }}</p>
+          </div>
+      {% endfor %}
+  </div>
+</body>
+</html>

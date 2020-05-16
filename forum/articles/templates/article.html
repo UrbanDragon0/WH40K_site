@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <title>WARHAMMER40000</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/archive_style.css' %}">
+</head>
+
+<body>
+  <div>
+    {% load static %}
+    <style>body {background-image: url({% static 'imgs/fon2.jpg' %});
+       background-size: 100%;}</style>
+  </div>
+<a href="/archive/">МАНУСКРИПТЫ</a>
+
+
+  <div class='hed'>
+    <div class="one-post">
+        <h2 class="post-title">{{ post.title }}</h2>
+        <div class="article-info">
+            <div class="article-author">{{ post.author.username }}</div>
+            <div class="article-created-date">{{ post.created_date }}</div>
+        </div>
+    </div>
+    <p class="article-text">{{ post.text }}</p>
+  </div>
+  <marquee behavior="scroll" direction="right">ЗА ИМПЕРАТОРА|  ЗА ИМПЕРАТОРА|   ЗА ИМПЕРАТОРА|   ЗА ИМПЕРАТОРА|   ЗА ИМПЕРАТОРА|   ЗА ИМПЕРАТОРА|  ЗА ИМПЕРАТОРА|  ЗА ИМПЕРАТОРА|  ЗА ИМПЕРАТОРА|   ЗА ИМПЕРАТОРА|  ЗА ИМПЕРАТОРА|  ЗА ИМПЕРАТОРА|  ЗА ИМПЕРАТОРА|</marquee>
+</body>
+</html>
